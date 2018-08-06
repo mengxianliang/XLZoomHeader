@@ -88,9 +88,9 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
     //计算宽度
     CGFloat width = height * ([self imageViewRect].size.width/[self imageViewRect].size.height);
     //x
-    CGFloat x = -(width - [self imageViewRect].size.width)/2.0f;
+    CGFloat x = -(width - [self imageViewRect].size.width)/2.0f + [self imageViewRect].origin.x;
     //y
-    CGFloat y = -offset;
+    CGFloat y = -offset + [self imageViewRect].origin.y;
     //设置大小
     self.backGroundImageView.frame = CGRectMake(x, y, width, height);
     //如果向上滚动，大小不变

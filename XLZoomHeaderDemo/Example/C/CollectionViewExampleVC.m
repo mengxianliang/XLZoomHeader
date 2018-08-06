@@ -26,7 +26,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat margin = 3.0f;
+    CGFloat margin = 5.0f;
     CGFloat itemW = (self.view.bounds.size.width - 4*margin)/3.0f;
     CGFloat itemH = itemW * 1.5;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -56,17 +56,10 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId = @"UICollectionViewCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    cell.backgroundColor = [self randomColor];
+    cell.layer.borderWidth = 1.0f;
+    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
     return cell;
 }
-
-- (UIColor *)randomColor {
-    CGFloat hue = ( arc4random() % 256 / 256.0 );
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;
-    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
