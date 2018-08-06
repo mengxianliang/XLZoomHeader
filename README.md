@@ -7,7 +7,7 @@
 
 ### Tips
 
-- [x] 使用时，建议新建一个XLZoomHeader的子类，在子类中添加自定义功能和布局。
+- [x] 使用时，建议新建一个XLZoomHeader的子类，在子类中添加自定义的功能和布局。
 
 
 ### 显示效果
@@ -18,7 +18,7 @@
 
 ### 使用方法
 
-新建一个XLZoomHeader的子类，TestZoomHeader，实例化后赋值给xl_zoomHeader属性，然后在XLZoomHeader内部设置背景图和缩进属性
+新建一个XLZoomHeader的子类，TestZoomHeader，实例化后赋值给xl_zoomHeader属性，然后在XLZoomHeader内部设置**背景图**和**背景图缩进**属性
 
 ```objc
 TestZoomHeader *header = [[TestZoomHeader alloc] initWithFrame:CGRectMake(0, 0, scrollView.bounds.size.width, 150)];
@@ -27,9 +27,13 @@ scrollView.xl_zoomHeader = header;
 ### 参数说明：
 
 <br>
+
 **image** ：设置背景图图片
+
 <br>
 <br>
+
 **imageInset**：背景图缩进
+
 
 ### 个人开发过的UI工具集合 [XLUIKit](https://github.com/mengxianliang/XLUIKit)
