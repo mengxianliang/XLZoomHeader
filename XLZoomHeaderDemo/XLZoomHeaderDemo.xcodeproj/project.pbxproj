@@ -14,7 +14,6 @@
 		5EC98BF221145A0D000CA9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC98BF021145A0D000CA9D9 /* LaunchScreen.storyboard */; };
 		5EC98BF521145A0D000CA9D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC98BF421145A0D000CA9D9 /* main.m */; };
 		5EC98BFF21145A79000CA9D9 /* XLZoomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC98BFE21145A79000CA9D9 /* XLZoomHeader.m */; };
-		5EC98C0221145AA0000CA9D9 /* UIScrollView+XLZoomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC98C0121145AA0000CA9D9 /* UIScrollView+XLZoomHeader.m */; };
 		5EC98C0721145C16000CA9D9 /* TableViewExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC98C0621145C16000CA9D9 /* TableViewExampleVC.m */; };
 		5EC98C0A21145C25000CA9D9 /* CollectionViewExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC98C0921145C25000CA9D9 /* CollectionViewExampleVC.m */; };
 		5EC98C0D21145C3C000CA9D9 /* TestZoomHeader1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC98C0C21145C3C000CA9D9 /* TestZoomHeader1.m */; };
@@ -36,8 +35,6 @@
 		5EC98BF421145A0D000CA9D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EC98BFD21145A79000CA9D9 /* XLZoomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLZoomHeader.h; sourceTree = "<group>"; };
 		5EC98BFE21145A79000CA9D9 /* XLZoomHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLZoomHeader.m; sourceTree = "<group>"; };
-		5EC98C0021145AA0000CA9D9 /* UIScrollView+XLZoomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XLZoomHeader.h"; sourceTree = "<group>"; };
-		5EC98C0121145AA0000CA9D9 /* UIScrollView+XLZoomHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XLZoomHeader.m"; sourceTree = "<group>"; };
 		5EC98C0521145C16000CA9D9 /* TableViewExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewExampleVC.h; sourceTree = "<group>"; };
 		5EC98C0621145C16000CA9D9 /* TableViewExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewExampleVC.m; sourceTree = "<group>"; };
 		5EC98C0821145C25000CA9D9 /* CollectionViewExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewExampleVC.h; sourceTree = "<group>"; };
@@ -101,8 +98,6 @@
 			children = (
 				5EC98BFD21145A79000CA9D9 /* XLZoomHeader.h */,
 				5EC98BFE21145A79000CA9D9 /* XLZoomHeader.m */,
-				5EC98C0021145AA0000CA9D9 /* UIScrollView+XLZoomHeader.h */,
-				5EC98C0121145AA0000CA9D9 /* UIScrollView+XLZoomHeader.m */,
 			);
 			path = XLZoomHeader;
 			sourceTree = "<group>";
@@ -220,7 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC98C1021145C69000CA9D9 /* TestZoomHeader2.m in Sources */,
-				5EC98C0221145AA0000CA9D9 /* UIScrollView+XLZoomHeader.m in Sources */,
 				5EC98C0D21145C3C000CA9D9 /* TestZoomHeader1.m in Sources */,
 				5EC98C0A21145C25000CA9D9 /* CollectionViewExampleVC.m in Sources */,
 				5EC98BEA21145A0C000CA9D9 /* ViewController.m in Sources */,

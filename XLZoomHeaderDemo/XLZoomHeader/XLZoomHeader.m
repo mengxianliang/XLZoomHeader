@@ -7,6 +7,7 @@
 //
 
 #import "XLZoomHeader.h"
+#import <objc/runtime.h>
 
 static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 
@@ -80,7 +81,10 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 #pragma mark 放大动画
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
     //顶部适应缩进
-    CGFloat top = self.scrollView.adjustedContentInset.top;
+    CGFloat top = 0;
+    if (@available(iOS 11.0, *)) {
+        top = self.scrollView.adjustedContentInset.top;
+    }
     //移动距离
     CGFloat offset = fabs(self.scrollView.contentOffset.y) - top;
     //计算高度
@@ -101,17 +105,18 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 
 - (CGRect)imageViewRect {
     CGRect rect = self.bounds;
-    rect.origin.x = self.imageInset.left;
-    rect.size.width = rect.size.width - self.imageInset.left - self.imageInset.right;
-    rect.origin.y = self.imageInset.top;
-    rect.size.height = rect.size.height - self.imageInset.top - self.imageInset.bottom;
+    rect.origin.x = self.backgroundImageInsets.left;
+    rect.size.width = rect.size.width - self.backgroundImageInsets.left - self.backgroundImageInsets.right;
+    rect.origin.y = self.backgroundImageInsets.top;
+    rect.size.height = rect.size.height - self.backgroundImageInsets.top - self.backgroundImageInsets.bottom;
     return rect;
 }
 
 #pragma mark -
 #pragma mark Setter
-- (void)setImage:(UIImage *)image {
-    _backGroundImageView.image = image;
+- (void)setBackgroundImage:(UIImage *)backgroundImage {
+    _backgroundImage = backgroundImage;
+    self.backGroundImageView.image = backgroundImage;
 }
 
 - (void)dealloc {
@@ -120,3 +125,21 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 
 @end
  
+static NSString *XLZoomHeaderKey = @"XLZoomHeaderKey";
+
+@implementation UIScrollView (XLZoomHeader)
+
+- (void)setXl_zoomHeader:(XLZoomHeader *)xl_zoomHeader {
+    if (xl_zoomHeader != self.xl_zoomHeader) {
+        [self.xl_zoomHeader removeFromSuperview];
+        [self insertSubview:xl_zoomHeader atIndex:0];
+        objc_setAssociatedObject(self, &XLZoomHeaderKey,
+                                 xl_zoomHeader, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+}
+
+- (XLZoomHeader *)xl_zoomHeader {
+    return objc_getAssociatedObject(self, &XLZoomHeaderKey);
+}
+
+@end

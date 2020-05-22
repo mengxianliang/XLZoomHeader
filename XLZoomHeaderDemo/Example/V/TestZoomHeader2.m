@@ -22,9 +22,9 @@
     CGFloat iconH = 80.0f;
     
     //设置背景图
-    self.image = [UIImage imageNamed:@"test_backGround"];
+    self.backgroundImage = [UIImage imageNamed:@"test_backGround"];
     //设置背景图缩进
-    self.imageInset = UIEdgeInsetsMake(0, 0, iconH/2.0f, 0);
+    self.backgroundImageInsets = UIEdgeInsetsMake(0, 0, iconH/2.0f, 0);
     
     
     //自定义内容

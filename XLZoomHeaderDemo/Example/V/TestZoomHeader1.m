@@ -19,7 +19,7 @@
 
 - (void)buildUI {
     //设置背景图
-    self.image = [UIImage imageNamed:@"test_backGround"];
+    self.backgroundImage = [UIImage imageNamed:@"test_backGround"];
     
     
     //自定义内容

@@ -7,18 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIScrollView+XLZoomHeader.h"
 
 @interface XLZoomHeader : UIView
 
-/**
- 图片缩进
- */
-@property (nonatomic, assign) UIEdgeInsets imageInset;
+///图片缩进
+@property (nonatomic, assign) UIEdgeInsets backgroundImageInsets;
 
-/**
- 背景图片
- */
-@property (nonatomic, strong) UIImage *image;
+///背景图片
+@property (nonatomic, strong) UIImage *backgroundImage;
+
+@end
+
+
+@interface UIScrollView (XLHeaderExtension)
+
+//
+@property (nonatomic, strong) XLZoomHeader *xl_zoomHeader;
 
 @end
