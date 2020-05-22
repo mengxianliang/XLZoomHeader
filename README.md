@@ -26,8 +26,8 @@ scrollView.xl_zoomHeader = header;
 ```
 ### 参数说明：
 
-**image** ：设置背景图图片
+**backgroundImage** ：设置背景图图片
 <br>
-**imageInset**：背景图缩进
+**backgroundImageInsets**：背景图缩进
 
 ### 个人开发过的UI工具集合 [XLUIKit](https://github.com/mengxianliang/XLUIKit)
