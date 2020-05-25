@@ -5,16 +5,12 @@
 
 适用于UIScrollView、UITableView、UICollectionView、UIWebView（即UIScrollV及其子类）的页面头部视图。
 
-### Tips
-
-- [x] 使用时，建议新建一个XLZoomHeader的子类，在子类中添加自定义的功能和布局。
-
 
 ### 显示效果
 
 | 正常显示 | 设置背景图缩进 |
 | ---- | ---- |
-|![image](https://github.com/mengxianliang/XLZoomHeader/blob/master/GIF/2.gif)| ![image](https://github.com/mengxianliang/XLZoomHeader/blob/master/GIF/1.gif)| 
+|![image](https://github.com/mengxianliang/ImageRepository/blob/master/XLNavigationBar/weibo.gif)| ![image](https://github.com/mengxianliang/ImageRepository/blob/master/XLNavigationBar/douyin.gif)| 
 
 ### 使用方法
 
@@ -30,4 +26,4 @@ scrollView.xl_zoomHeader = header;
 <br>
 **backgroundImageInsets**：背景图缩进
 
-### 个人开发过的UI工具集合 [XLUIKit](https://github.com/mengxianliang/XLUIKit)
+### UI tools [XLUIKit](https://github.com/mengxianliang/XLUIKit)
