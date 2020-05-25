@@ -41,12 +41,12 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 }
 
 - (void)initHeaderRect {
-    //设置范围
+    //set frame
     CGFloat height = self.bounds.size.height;
     CGRect frame = self.frame;
     frame.origin.y = -height;
     self.frame = frame;
-    //设置内容缩进
+    //set scrollView inset
     self.scrollView.contentInset = UIEdgeInsetsMake(height, 0, 0, 0);
 }
 
@@ -59,7 +59,7 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 }
 
 #pragma mark -
-#pragma mark 添加观察者
+#pragma mark add observers
 - (void)addObservers {
     NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
     [self.scrollView addObserver:self forKeyPath:XLZoomHeaderContentOffsetKey options:options context:nil];
@@ -78,26 +78,26 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 }
 
 #pragma mark -
-#pragma mark 放大动画
+#pragma mark zoom animation
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
-    //顶部适应缩进
+    //set top inset
     CGFloat top = 0;
     if (@available(iOS 11.0, *)) {
         top = self.scrollView.adjustedContentInset.top;
     }
-    //移动距离
+    //move offset
     CGFloat offset = fabs(self.scrollView.contentOffset.y) - top;
-    //计算高度
+    
     CGFloat height = [self imageViewRect].size.height + offset;
-    //计算宽度
+    
     CGFloat width = height * ([self imageViewRect].size.width/[self imageViewRect].size.height);
     //x
     CGFloat x = -(width - [self imageViewRect].size.width)/2.0f + [self imageViewRect].origin.x;
     //y
     CGFloat y = -offset + [self imageViewRect].origin.y;
-    //设置大小
+    //set frame
     self.backGroundImageView.frame = CGRectMake(x, y, width, height);
-    //如果向上滚动，大小不变
+    //if scrolls upside dont update frame
     if (offset <= 0) {
         self.backGroundImageView.frame = [self imageViewRect];
     }
