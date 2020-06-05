@@ -15,7 +15,7 @@ static NSString *XLZoomHeaderContentOffsetKey = @"contentOffset";
 
 @property (nonatomic, strong) UIImageView *backGroundImageView;
 
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, weak) UIScrollView *scrollView;
 
 @end
 

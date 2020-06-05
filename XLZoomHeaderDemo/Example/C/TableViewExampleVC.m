@@ -57,4 +57,8 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc {
+    NSLog(@"VC destroied");
+}
+
 @end
